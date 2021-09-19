@@ -41,3 +41,9 @@ class KNN:
                         ind_temp.append(k)
             ind.append(ind_temp)
         return (res, ind)
+
+    def predict(self, x):
+        pass
+
+    def evaluate(self, x, y):
+        pass
