@@ -16,7 +16,6 @@ class KNN:
         return self
 
     def find_distance(self, x):
-<<<<<<< HEAD
         result = []
         for vec1 in x:
             temp_arr = []
@@ -25,9 +24,6 @@ class KNN:
                 temp_arr.append(d)
             result.append(temp_arr)
         return result
-=======
-        pass
->>>>>>> 8e11fe46291b9ba5a0033e3add28d204700b8a74
 
     def k_neighbours(self, x):
         pass
