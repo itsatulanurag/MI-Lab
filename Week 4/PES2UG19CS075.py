@@ -34,13 +34,13 @@ class KNN:
         ind = []
         for i in range(len(x)):
             res.append(arr[i][slice(self.k_neigh)])
-        res = [res]
-        # for i in range(self.k_neigh):
-        #     for j in range(temp_arr):
-        #         if(temp_arr[i][j])
-        # print(j)
-        # print(temp_arr)
-        return res
+            ind_temp = []
+            for j in range(self.k_neigh):
+                for k in range(len(temp_arr[i])):
+                    if(res[i][j] == temp_arr[i][k]):
+                        ind_temp.append(k)
+            ind.append(ind_temp)
+        return (res, ind)
 
     def predict(self, x):
         pass
