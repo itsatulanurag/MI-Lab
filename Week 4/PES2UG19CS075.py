@@ -26,7 +26,21 @@ class KNN:
         return result
 
     def k_neighbours(self, x):
-        pass
+        arr = KNN.find_distance(self, x)
+        temp_arr = copy.deepcopy(arr)
+        for set in arr:
+            set.sort()
+        res = []
+        ind = []
+        for i in range(len(x)):
+            res.append(arr[i][slice(self.k_neigh)])
+        res = [res]
+        # for i in range(self.k_neigh):
+        #     for j in range(temp_arr):
+        #         if(temp_arr[i][j])
+        # print(j)
+        # print(temp_arr)
+        return res
 
     def predict(self, x):
         pass
