@@ -43,7 +43,26 @@ class KNN:
         return (res, ind)
 
     def predict(self, x):
-        pass
+        neighbors = self.k_neighbours(x)[1]
+        result = []
+        for i in range(len(neighbors)):
+            temp_arr = {}
+            for j in range(len(neighbors[i])):
+                if self.target[neighbors[i][j]] in temp_arr:
+                    temp_arr[self.target[neighbors[i][j]]] += 1
+                else:
+                    temp_arr[self.target[neighbors[i][j]]] = 1
+            max_val = 0
+            pred = 0
+            for i in range(min(temp_arr), max(temp_arr)+1):
+                if temp_arr[i] > max_val:
+                    max_val = temp_arr[i]
+                    pred = i
+            result.append(pred)
+        return result
 
     def evaluate(self, x, y):
-        pass
+        pred_arr = KNN.predict(self, x)
+        count = np.sum(pred_arr == y)
+        result = 100*(count/len(x))
+        return result
